@@ -1,0 +1,1 @@
+perl Configure VC-WIN32 --debug --prefix=C:\Users\User\Desktop\test\test\lib --openssldir=C:\Users\User\Desktop\test\test\SSL

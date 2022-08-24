@@ -1,0 +1,19 @@
+
+
+cl /c /I C:\Users\User\Desktop\CS\final11\final5\Include  /ZI /JMC /nologo /W3 /WX- /diagnostics:classic /sdl /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Gd /TP /analyze- /FC /errorReport:prompt Source.cpp
+
+link  /INCREMENTAL /NOLOGO  C:\Users\User\Desktop\CS\final11\final5\Debug\App.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib  /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /TLBID:1 /DYNAMICBASE /NXCOMPAT  /MACHINE:X86 Source.obj
+
+
+
+//my summarized version
+cl /c /I "C:\\Users\\User\\Desktop\\CS\\final11\\final5\\Include" /MDd Source.c
+
+link  /INCREMENTAL /NOLOGO  C:\Users\User\Desktop\CS\final11\final5\Debug\App.lib kernel32.lib shell32.lib /MACHINE:X86 Source.obj
+
+//openssl
+cl  /Zi /Fdossl_static.pdb /Gs0 /GF /Gy /MDd /W3 /wd4090 /nologo /Od /I C:\Users\User\Desktop\CS\final11\\final5\Include /I "." /I "include" -D"L_ENDIAN" -D"OPENSSL_PIC" -D"OPENSSL_CPUID_OBJ" -D"OPENSSL_BN_ASM_PART_WORDS" -D"OPENSSL_IA32_SSE2" -D"OPENSSL_BN_ASM_MONT" -D"OPENSSL_BN_ASM_GF2m" -D"SHA1_ASM" -D"SHA256_ASM" -D"SHA512_ASM" -D"RC4_ASM" -D"MD5_ASM" -D"RMD160_ASM" -D"AESNI_ASM" -D"VPAES_ASM" -D"WHIRLPOOL_ASM" -D"GHASH_ASM" -D"ECP_NISTZ256_ASM" -D"POLY1305_ASM" -D"OPENSSLDIR=\"C:\\Users\\User\\Desktop\\test\\test\\SSL\"" -D"ENGINESDIR=\"C:\\Users\\User\\Desktop\\test\\test\\lib\\lib\\engines-1_1\"" -D"OPENSSL_SYS_WIN32" -D"WIN32_LEAN_AND_MEAN" -D"UNICODE" -D"_UNICODE" -D"_CRT_SECURE_NO_DEPRECATE" -D"_WINSOCK_DEPRECATED_NO_WARNINGS" -D"DEBUG" -D"_DEBUG" -D"OPENSSL_USE_APPLINK"   -c /Fossl\tls13_enc.obj "ssl\tls13_enc.c"
+tls13_enc.c
+
+
+cl  /Zi /Fdossl_static.pdb /Gs0 /GF /Gy /MDd /W3 /wd4090 /nologo /Od /I C:\Users\User\Desktop\CS\final11\\final5\Include /I "." /I "include" -D"L_ENDIAN" -D"OPENSSL_PIC" -D"OPENSSL_CPUID_OBJ" -D"OPENSSL_BN_ASM_PART_WORDS" -D"OPENSSL_IA32_SSE2" -D"OPENSSL_BN_ASM_MONT" -D"OPENSSL_BN_ASM_GF2m" -D"SHA1_ASM" -D"SHA256_ASM" -D"SHA512_ASM" -D"RC4_ASM" -D"MD5_ASM" -D"RMD160_ASM" -D"AESNI_ASM" -D"VPAES_ASM" -D"WHIRLPOOL_ASM" -D"GHASH_ASM" -D"ECP_NISTZ256_ASM" -D"POLY1305_ASM" -D"OPENSSLDIR=\"C:\\Users\\User\\Desktop\\test\\test\\SSL\"" -D"ENGINESDIR=\"C:\\Users\\User\\Desktop\\test\\test\\lib\\lib\\engines-1_1\"" -D"OPENSSL_SYS_WIN32" -D"WIN32_LEAN_AND_MEAN" -D"UNICODE" -D"_UNICODE" -D"_CRT_SECURE_NO_DEPRECATE" -D"_WINSOCK_DEPRECATED_NO_WARNINGS" -D"DEBUG" -D"_DEBUG" -D"OPENSSL_USE_APPLINK"   -c Source.cpp

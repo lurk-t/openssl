@@ -1,0 +1,13 @@
+DLL_Debug:
+perl Configure VC-WIN32 --debug --prefix=C:\Users\User\Desktop\test\test\DLL\Debug --openssldir=C:\Users\User\Desktop\test\test\SSL
+
+DLL_Release:
+perl Configure VC-WIN32  --prefix=C:\Users\User\Desktop\test\test\DLL\Release --openssldir=C:\Users\User\Desktop\test\test\SSL
+
+
+Lib_Release:
+perl Configure VC-WIN32 no-shared --prefix=C:\Users\User\Desktop\test\test\Lib\Release --openssldir=C:\Users\User\Desktop\test\test\SSL
+
+
+Lib_Debug:
+perl Configure VC-WIN32 -debug no-shared --prefix=C:\Users\User\Desktop\test\test\Lib\Debug --openssldir=C:\Users\User\Desktop\test\test\SSL
