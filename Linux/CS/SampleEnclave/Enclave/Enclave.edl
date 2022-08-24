@@ -1,0 +1,41 @@
+/* Enclave.edl - Top EDL file. */
+
+enclave {
+
+	include "LURK_header.h"
+	
+    /* Import ECALL/OCALL from sub-directory EDLs.
+     *  [from]: specifies the location of EDL file. 
+     *  [import]: specifies the functions to import, 
+     *  [*]: implies to import all functions.
+     */
+    from "sgx_tsgxssl.edl" import *;
+	
+
+
+	trusted {
+	
+		//include "Lurk_structs.h"
+    	public void LURK_ssl_generate_pkey_sgx([in, out , size = peer_public_key_len] unsigned char* peer_public_key, size_t peer_public_key_len, [in, out] struct SInitCertVerifyResponse *respons, [in, out] struct SInitCertVerifyRequest *req, [in, out] int *a);
+		public void init_certificate_verify([in, out] struct  SInitCertVerifyRequest *req,[in, out] int* a, [in, out] struct SInitCertVerifyResponse *respons);
+        /*
+        * For now only statefull tickets are supported 
+        * nonce lable is set by the TLS engine since TLS engine deside the external/ internal PSK [in, out , size = nonce_label_len] unsigned char* nonce_label , size_t nonce_label_len
+        */
+        public void LURK_construct_new_session_ticket_and_resumption_sec([in, out] int* status_tic, [in, out] struct SInitCertVerifyResponse *respons, [in, out , size = tick_nonce_len] unsigned char *tick_nonce, size_t tick_nonce_len, [in, out] struct SInitCertVerifyRequest *req);
+        /*
+        * In one ECALL we look up the cached session and (if successful) return the binder key
+        */
+        public void LURK_get_stateful_ticket_binder_key_SGX([in, out] int *status_tic, [in, out] struct SInitCertVerifyRequest *req, [in, out] struct SInitCertVerifyResponse *respons);
+    };
+    /* 
+     * ocall_print_string - invokes OCALL to display string buffer inside the enclave.
+     *  [in]: copy the string buffer to App outside.
+     *  [string]: specifies 'str' is a NULL terminated buffer.
+     */
+    untrusted {
+
+        void ocall_print_string(int a);
+    };
+
+};

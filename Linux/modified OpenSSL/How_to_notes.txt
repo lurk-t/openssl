@@ -1,0 +1,24 @@
+enter openssl dir:
+
+1- for static build release:
+ ./config -fPIC no-shared --prefix=/home/anonmous/Documents/OpenSSL/Modified_OpenSSL/static --openssldir=/home/anonmous/Documents/OpenSSL/Modified_OpenSSL/SSL
+ make 
+ make install_sw
+
+2- for static build debug:
+./config -fPIC no-shared --debug --prefix=/home/anonmous/Documents/OpenSSL/Modified_OpenSSL/Debug/static --openssldir=/home/anonmous/Documents/OpenSSL/Modified_OpenSSL/SSL
+ make 
+ make install_sw
+
+3- for dynamic build debug:
+./config -fPIC shared --debug --prefix=/home/anonmous/Documents/OpenSSL/Modified_OpenSSL/dynamic/Debug --openssldir=/home/anonmous/Documents/OpenSSL/Modified_OpenSSL/SSL
+ make 
+ make install_sw
+
+4- for dynamic build release:
+./config -fPIC shared --prefix=/home/anonmous/Documents/OpenSSL/Modified_OpenSSL/dynamic/Release --openssldir=/home/anonmous/Documents/OpenSSL/Modified_OpenSSL/SSL
+ make 
+ make install_sw
+
+
+

@@ -1,0 +1,8 @@
+To do list for CS: 
+
+
+1- Evaluating compute versus context switching  (part 7.1.1 of draft) (we must choose!)
+If we want to go with option 2, it is doable but some extra work for re doing the finish + implementation. 
+However, we would save 1 exchange for TEE-REE
+
+----------------------------------------------------------------------------------------------------------
